@@ -1,9 +1,9 @@
-import p1 from "../pics/p1.png";
-import p2 from "../pics/p2.jpg";
-import p3 from "../pics/p3.jpg";
-import p4 from "../pics/p4.jpg";
-import p5 from "../pics/p5.jpg";
-import p6 from "../pics/p6.jpg";
+import p1 from "../../assets/images/p1.png";
+import p2 from "../../assets/images/p2.jpg";
+import p3 from "../../assets/images/p3.jpg";
+import p4 from "../../assets/images/p4.jpg";
+import p5 from "../../assets/images/p5.jpg";
+import p6 from "../../assets/images/p6.jpg";
 
 const Portfolio_data = [
     {

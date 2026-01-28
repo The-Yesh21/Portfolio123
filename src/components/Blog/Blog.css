@@ -1,0 +1,43 @@
+/* Blog specific overrides */
+.modal-blog-content {
+    flex-direction: column;
+}
+
+.blog-text h1 {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.blog_contact {
+    margin-top: 20px;
+}
+
+.blog_contact input, .blog_contact textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: var(--inner-shadow);
+    background: var(--bg-color);
+}
+
+.blog_contact .row {
+    display: flex;
+    gap: 15px;
+}
+
+.blog_contact .row input {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .blog_contact .row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .blog_contact .row input {
+        width: 100%;
+    }
+}

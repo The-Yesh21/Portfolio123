@@ -1,0 +1,121 @@
+.Resume {
+    padding-bottom: 50px;
+}
+
+.Resume .content-section {
+    display: flex;
+    justify-content: center;
+}
+
+.Resume .left {
+    width: 100%;
+    max-width: 900px;
+}
+
+.Resume .heading {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.Resume .heading h4 {
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.Resume .heading h1 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+/* Card Styling */
+.resume-card {
+    padding: 35px;
+    margin-bottom: 30px;
+    background: var(--gradient-box);
+    border-radius: 12px;
+    transition: 0.5s;
+    position: relative;
+    border: 3px solid transparent;
+}
+
+.resume-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.resume-card .title_content {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.resume-card .title h2 {
+    font-size: 24px;
+    font-weight: 600;
+    transition: 0.5s;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.resume-card .title span {
+    font-size: 14px;
+    color: var(--text-secondary);
+    transition: 0.5s;
+}
+
+.resume-card .rate button {
+    color: var(--primary-color);
+    font-weight: 700;
+    min-width: 80px;
+    height: 40px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-light);
+    background: var(--bg-color);
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+.resume-card hr {
+    border: none;
+    height: 1px;
+    background: #dce1e4;
+    margin: 25px 0;
+}
+
+.resume-card p {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--text-secondary);
+    transition: 0.5s;
+}
+
+/* Hover effects */
+.resume-card:hover {
+    background: var(--primary-color);
+}
+
+.resume-card:hover .title h2,
+.resume-card:hover .title span,
+.resume-card:hover p {
+    color: white;
+}
+
+.resume-card:hover hr {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.resume-card:hover .rate button {
+    background: #ff4d80;
+    color: white;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .resume-card .title_content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

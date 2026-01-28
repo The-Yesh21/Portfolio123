@@ -13,10 +13,10 @@ const Resume = () => {
             <h1>My Resume</h1>
           </div>
 
-          <div className="content-section mtop d_flex">
+          <div className="content-section mtop">
             <div className="left">
               <div className="heading">
-                <h4>2007-</h4>
+                <h4>2007-2010</h4>
                 <h1>Education Quality</h1>
               </div>
 

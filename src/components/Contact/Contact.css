@@ -1,0 +1,120 @@
+.Contact .content {
+    align-items: flex-start;
+}
+
+.Contact .left {
+    width: 35%;
+}
+
+.Contact .right {
+    width: 60%;
+    padding: 30px;
+}
+
+.Contact .box {
+    padding: 30px;
+}
+
+.Contact .img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.Contact .details h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.Contact .details p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+
+.Contact .details span {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    display: block;
+    margin-top: 20px;
+}
+
+.Contact .button {
+    gap: 15px;
+}
+
+.Contact .button a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Form */
+.Contact form .f_flex {
+    justify-content: space-between;
+}
+
+.Contact form .row {
+    width: 48%;
+}
+
+.Contact .input {
+    margin-bottom: 20px;
+}
+
+.Contact .input span {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.Contact input, .Contact textarea {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.Contact .right button {
+    width: 100%;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.Contact .right button i {
+    margin-left: 10px;
+}
+
+.Contact .right button:hover {
+    color: white;
+}
+
+@media (max-width: 968px) {
+    .Contact .d_flex {
+        flex-direction: column;
+    }
+
+    .Contact .left, .Contact .right {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .Contact form .f_flex {
+        flex-direction: column;
+    }
+
+    .Contact form .row {
+        width: 100%;
+    }
+}

@@ -1,25 +1,29 @@
-import React from "react"
-import Header from "./Component/Head/Header"
-import Features from "./Component/Features/Features"
-import Home from "./Component/Hero/Home"
-import Portfolio from "./Component/Portfolio/Portfolio"
-import Resume from "./Component/Resume/Resume"
-import Blog from "./Component/Blog/Blog"
-import Contact from "./Component/Contact/Contact"
-import Footer from "./Component/Footer"
+import React, { Suspense, lazy } from "react"
+import Header from "./components/Head/Header"
+import Home from "./components/Hero/Home"
 import "./App.css"
+
+// Lazy load components to improve initial load time
+const Features = lazy(() => import("./components/Features/Features"))
+const Portfolio = lazy(() => import("./components/Portfolio/Portfolio"))
+const Resume = lazy(() => import("./components/Resume/Resume"))
+const Blog = lazy(() => import("./components/Blog/Blog"))
+const Contact = lazy(() => import("./components/Contact/Contact"))
+const Footer = lazy(() => import("./components/Footer"))
 
 const App = () => {
   return (
     <>
       <Header />
       <Home />
-      <Features />
-      <Portfolio />
-      <Resume />
-      <Blog />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<div className="loading-container"><div className="loading-spinner"></div></div>}>
+        <Features />
+        <Portfolio />
+        <Resume />
+        <Blog />
+        <Contact />
+        <Footer />
+      </Suspense>
     </>
   )
 }
