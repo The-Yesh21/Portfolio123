@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import contact1 from "./contact1.png";
-import "./Contact.css";
+import React, { useState } from "react"
+import contact1 from "./contact1.png"
+import "./Contact.css"
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -9,29 +9,25 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
-  });
+  })
 
   const InputEvent = (event) => {
-    const { name, value } = event.target;
-
+    const { name, value } = event.target
     setData((preVal) => {
       return {
         ...preVal,
         [name]: value,
-      };
-    });
-  };
+      }
+    })
+  }
 
   const formSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
+    // Here you would typically handle the submission, e.g. send to an API
     alert(
-      `My name is ${data.fullname}. 
-    My phone number is ${data.phone}. 
-    My email address is ${data.email}. 
-    My Subject on ${data.subject}. 
-    Here is my message I want to say: ${data.message}.`
-    );
-  };
+      `Message Sent!\n\nName: ${data.fullname}\nPhone: ${data.phone}\nEmail: ${data.email}\nSubject: ${data.subject}\nMessage: ${data.message}`
+    )
+  }
 
   return (
     <>
@@ -46,11 +42,11 @@ const Contact = () => {
             <div className='left'>
               <div className='box box_shadow'>
                 <div className='img'>
-                  <img src={contact1} alt='' />
+                  <img src={contact1} alt='Contact Me' />
                 </div>
                 <div className='details'>
                   <h1>Yeshwanth V</h1>
-                  <p>Student of Dr. Ambedka Institute of Technology</p>
+                  <p>Student of Dr. Ambedkar Institute of Technology</p>
                   <p>I am a Versatile Developer and Creative Designer.</p>
                   <br />
                   <p>Phone: +919535012916</p>
@@ -58,28 +54,13 @@ const Contact = () => {
                   <br />
                   <span>FIND WITH ME</span>
                   <div className='button f_flex'>
-                    <a
-                      href='https://www.facebook.com/profile.php?id=61567491416073'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='btn_shadow'
-                    >
+                    <a href='https://www.facebook.com/profile.php?id=61567491416073' target='_blank' rel='noopener noreferrer' className='btn_shadow'>
                       <i className='fab fa-facebook-f'></i>
                     </a>
-                    <a
-                      href='https://www.instagram.com/the_yesh21/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='btn_shadow'
-                    >
+                    <a href='https://www.instagram.com/the_yesh21/' target='_blank' rel='noopener noreferrer' className='btn_shadow'>
                       <i className='fab fa-instagram'></i>
                     </a>
-                    <a
-                      href='https://www.linkedin.com/in/yeshwanth-reddy-38004b2b7/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='btn_shadow'
-                    >
+                    <a href='https://www.linkedin.com/in/yeshwanth-reddy-38004b2b7/' target='_blank' rel='noopener noreferrer' className='btn_shadow'>
                       <i className='fab fa-linkedin'></i>
                     </a>
                   </div>
@@ -92,50 +73,24 @@ const Contact = () => {
                 <div className='f_flex'>
                   <div className='input row'>
                     <span>YOUR NAME</span>
-                    <input
-                      type='text'
-                      name='fullname'
-                      value={data.fullname}
-                      onChange={InputEvent}
-                    />
+                    <input type='text' name='fullname' value={data.fullname} onChange={InputEvent} required />
                   </div>
                   <div className='input row'>
                     <span>PHONE NUMBER</span>
-                    <input
-                      type='number'
-                      name='phone'
-                      value={data.phone}
-                      onChange={InputEvent}
-                    />
+                    <input type='number' name='phone' value={data.phone} onChange={InputEvent} />
                   </div>
                 </div>
                 <div className='input'>
                   <span>EMAIL</span>
-                  <input
-                    type='email'
-                    name='email'
-                    value={data.email}
-                    onChange={InputEvent}
-                  />
+                  <input type='email' name='email' value={data.email} onChange={InputEvent} required />
                 </div>
                 <div className='input'>
                   <span>SUBJECT</span>
-                  <input
-                    type='text'
-                    name='subject'
-                    value={data.subject}
-                    onChange={InputEvent}
-                  />
+                  <input type='text' name='subject' value={data.subject} onChange={InputEvent} />
                 </div>
                 <div className='input'>
                   <span>YOUR MESSAGE</span>
-                  <textarea
-                    cols='30'
-                    rows='10'
-                    name='message'
-                    value={data.message}
-                    onChange={InputEvent}
-                  ></textarea>
+                  <textarea cols='30' rows='10' name='message' value={data.message} onChange={InputEvent} required></textarea>
                 </div>
                 <button className='btn_shadow'>
                   SEND MESSAGE <i className='fa fa-long-arrow-right'></i>
@@ -146,7 +101,7 @@ const Contact = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

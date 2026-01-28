@@ -1,132 +1,272 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #ecf0f3;
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
 }
+
+ul, li {
+  list-style: none;
+}
+
+/* Utilities */
 .container {
-  max-width: 95%;
-  margin: auto;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
+
 .d_flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
 .f_flex {
   display: flex;
+  flex-wrap: wrap;
 }
-a {
-  text-decoration: none;
-  color: black;
-}
-li {
-  list-style: none;
-}
+
 .uppercase {
   text-transform: uppercase;
 }
+
 .capitalize {
   text-transform: capitalize;
 }
 
-button {
-  border: none;
-  outline: none;
-  background-color: none;
-}
-
-.btn_shadow {
-  padding: 18px 25px;
-  border-radius: 6px;
-  transition: 0.3s all ease;
-  cursor: pointer;
-  color: #000;
-  transition: 0.5s;
-}
-.btn_shadow {
-  background: linear-gradient(145deg, #e2e8ec, #ffffff);
-  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
-}
-.btn_shadow:hover {
-  background: #ff014f;
-  color: white;
-  transform: translateY(-10px);
-}
-.box_shodow {
-  background: linear-gradient(145deg, #e2e8ec, #ffffff);
-  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
-  border-radius: 10px;
-}
-.row,
-.left,
-.right {
-  width: 50%;
-}
-.top {
-  margin-top: 80px;
-}
-.mtop {
-  margin-top: 40px;
-}
-.heading {
-  margin: 50px 0 50px 0;
-}
-.heading h4 {
-  color: #ff014f;
-  letter-spacing: 2px;
-  font-weight: 400;
-}
-.heading h1 {
-  font-size: 60px;
-  color: #3c3e41;
-}
-h1 {
-  color: #3c3e41;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 35px;
-}
-p {
-  color: #3c3e41;
-}
 .text-center {
   text-align: center;
 }
+
 .primary_color {
-  color: #ff014f;
+  color: var(--primary-color);
 }
+
+/* Buttons */
+button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: var(--font-base);
+}
+
+.btn_shadow {
+  padding: 15px 20px;
+  border-radius: 6px;
+  background: var(--gradient-box);
+  box-shadow: var(--shadow-light);
+  color: var(--text-primary);
+  transition: 0.4s ease;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_shadow:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: none;
+}
+
+/* Boxes */
+.box_shadow {
+  background: var(--gradient-box);
+  box-shadow: var(--shadow-light);
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.box_shadow:hover {
+  transform: translateY(-5px);
+}
+
+/* Layout helpers */
+.top {
+  margin-top: 80px;
+}
+
+.mtop {
+  margin-top: 40px;
+}
+
+.heading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.heading h4 {
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.heading h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Form Elements */
 textarea,
 input {
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
   outline: none;
-  border: 3px solid #e2e8ec;
+  border: 2px solid transparent;
+  background: var(--gradient-box);
+  box-shadow: var(--inner-shadow);
   margin-bottom: 20px;
+  font-family: var(--font-base);
+  color: var(--text-primary);
+  transition: 0.3s;
 }
-/*----------Footer---------*/
-footer {
-  margin: 20% 0 10% 0;
+
+textarea:focus,
+input:focus {
+  border-color: var(--primary-color);
 }
-footer p {
-  margin-top: 30px;
-}
-/*----------Footer---------*/
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .left,
-  .right {
+
+/* Global Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
+    height: 100%;
+    background: rgba(236, 240, 243, 0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--bg-color);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: var(--shadow-dark);
+}
+
+.modal-img {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+}
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.modal-text {
+    flex: 1;
+    text-align: left;
+}
+
+.modal-text span {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.modal-text h1 {
+    font-size: 30px;
+    margin: 15px 0;
+    color: var(--text-primary);
+}
+
+.modal-text p {
+    color: var(--text-secondary);
+    line-height: 28px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-text .button {
+    gap: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: var(--gradient-box);
+    box-shadow: var(--shadow-light);
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 968px) {
+    .modal-content {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .modal-img {
+        width: 100%;
+        max-height: 300px;
+    }
+    .heading h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .d_flex {
+        flex-direction: column;
+    }
 }

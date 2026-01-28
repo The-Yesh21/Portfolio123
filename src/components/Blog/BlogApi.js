@@ -1,5 +1,5 @@
-import article from "../pics/article1.png"
-import article2 from "../pics/article2.png"
+import article from "../../assets/images/article1.png"
+import article2 from "../../assets/images/article2.png"
 
 const BlogApi = [
     {
